@@ -14,8 +14,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/Components/ui/carousel"
 import { Card,CardContent } from "@/Components/ui/card";
 
