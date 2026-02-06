@@ -8,6 +8,8 @@ import watch from "@/assets/images/Watch.jpg"
 import Mencolth from "@/assets/images/Mencloth.jpg"
 import frok from "@/assets/images/frok.jpg"
 import gift from "@/assets/images/gifts.jpg"
+import perfume from "@/assets/images/Luxery_perfume.jpg"
+import { Button } from "@/Components/ui/button";
 
 
 import {
@@ -25,26 +27,33 @@ const Home = () => {
 const images =[
   {
   id: 1,
-  img: watch
+  img: watch,
+  des: "loem",
  },
    {
   id: 2,
-  img: gift
+  img: gift,
+   des: "loem",
  },  {
   id: 3,
-  img: Mencolth
+  img: Mencolth,
+   des: "loem",
  },  {
   id: 4,
-  img: frok
+  img: frok,
+   des: "loem",
  },   {
   id: 5,
-  img: gift
+  img: gift,
+   des: "loem",
  },  {
   id: 6,
-  img: Mencolth
+  img: Mencolth,
+   des: "loem",
  },  {
   id: 7,
-  img: watch
+  img: watch,
+   des: "loem",
  },
 ]
 
@@ -100,6 +109,7 @@ const images =[
       
      
       <div className="overflow-hidden rounded-tr-[200px] md:rounded-tr-[280px] border-b-0">
+        {/* <AspectRatio ratio={1.8/3}> */}
         <AspectRatio ratio={1.8/3}>
           <img 
             src={Womenimg} 
@@ -183,7 +193,7 @@ const images =[
      </div>
      <div className="imgcarousel flex justify-center items-center">
      
-      <Carousel className="w-full  lg:max-w-300">
+      <Carousel className="w-full  lg:max-w-300 px-4">
       <CarouselContent className="-ml-1 md:ml-0 lg:-ml-10">
         {images.map((index)=>(
           <CarouselItem key={index.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6">
@@ -192,10 +202,8 @@ const images =[
                 <CardContent className="p-0">
                    <AspectRatio ratio={1/1}>
                    <img className="w-full h-full rounded-2xl object-cover" src={index.img} alt="" />
+                   {index.des}
                    </AspectRatio>
-                   
-                   
-                   
                 </CardContent>
               </Card>
             </div>
@@ -206,8 +214,26 @@ const images =[
       <CarouselNext className="-mt-32 hidden md:block"/> */}
     </Carousel>
      </div>
-     </main>
+      {/* ********* IMAGE CAROUSEL END HERE **************** */}
+ 
+       <div className="perfumeimg mt-10 relative">
+        <AspectRatio ratio={1512 / 638}>
+       <img className="w-full h-full object-cover" src={perfume} alt="" /> 
+       <div className=" absolute inset-0 md:flex  md:flex-col md:justify-center md:items-start   sm:pl-14 pl-10   lg:p-14">
+        <h1 className="lg:text-8xl md:text-7xl sm:text-6xl  text-2xl font-cinzel   ">
+          Luxury <br className="hidden md:block" /> Perfumes
+        </h1>
+           <p className=" mt-2 sm:text-sm text-xs lg:text-xl -ml-5 font-cinzel tracking-tighter ">feel The luxury with our perfume collection</p>
+           <Button  className="font-cormorant rounded-3xl py-3 text-[gold] mt-10 -ml-5 sm:mt-5 sm:ml-20  md:mt-8 md:ml-28 lg:ml-36  ">Shop Now </Button>
+       
 
+       </div>
+        </AspectRatio>
+       
+
+       </div>
+     </main>
+ 
 
  
 
