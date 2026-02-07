@@ -16,6 +16,7 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+   
 } from "@/Components/ui/carousel"
 import { Card,CardContent } from "@/Components/ui/card";
 
@@ -193,15 +194,15 @@ const images =[
      </div>
      <div className="imgcarousel flex justify-center items-center">
      
-      <Carousel className="w-full  lg:max-w-300 px-4">
-      <CarouselContent className="-ml-1 md:ml-0 lg:-ml-10">
+      <Carousel className="w-full  lg:max-w-350 px-4 overflow-visible">
+      <CarouselContent className="pl-1 md:pl-0 lg:pl-10">
         {images.map((index)=>(
-          <CarouselItem key={index.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6">
+          <CarouselItem key={index.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6 ">
             <div className="p-1">
-              <Card className="gap-10 ">
-                <CardContent className="p-0">
+              <Card className="gap-10 overflow-hidden ">
+                <CardContent className="p-0 ">
                    <AspectRatio ratio={1/1}>
-                   <img className="w-full h-full rounded-2xl object-cover" src={index.img} alt="" />
+                   <img className="w-full h-full rounded-2xl object-cover " src={index.img} alt="" />
                    {index.des}
                    </AspectRatio>
                 </CardContent>
@@ -215,6 +216,9 @@ const images =[
     </Carousel>
      </div>
       {/* ********* IMAGE CAROUSEL END HERE **************** */}
+
+      {/* ********* Big perfume image start here **************** */}
+      
  
        <div className="perfumeimg mt-10 relative">
         <AspectRatio ratio={1512 / 638}>
@@ -229,10 +233,52 @@ const images =[
 
        </div>
         </AspectRatio>
-       
-
        </div>
+        {/* ********* Big perfume image End here **************** */}
+           {/* ********* Triangle Image Carosule start haver **************** */}
+      <div>
+        
+        <h1 className="font-cormorant text-4xl mt-1 mb-3 flex items-center justify-center">New Arrival</h1>
+      </div>
+     <div>
+     <div className="imgcarousel flex justify-center items-center">
+     
+      <Carousel className="w-full  lg:max-w-350 px-4 overflow-visible">
+      <CarouselContent className="pl-1 md:pl-0 lg:pl-10">
+        {images.map((index)=>(
+          <CarouselItem key={index.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6 ">
+            <div className="p-1">
+              <Card className="gap-10 overflow-hidden ">
+                <CardContent className="p-0 ">
+                   <AspectRatio ratio={1/1.5}>
+                   <img className="w-full h-full rounded-2xl object-cover " src={index.img} alt="" />
+                   {index.des}
+                   </AspectRatio>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      {/* <CarouselPrevious className="-mt-32 ml- hidden md:block" />
+      <CarouselNext className="-mt-32 hidden md:block"/> */}
+    </Carousel>
+     </div>
+     </div>
+      {/* ********* Triangle Image Carosule End  haver **************** */}
+      <div className="flex justify-center items-center">
+        <h1 className="font-cormorant text-3xl mt-2 ">Customer Reviews </h1>
+      </div>
+      
+     
+    
+
+
+
+     
      </main>
+  
+
  
 
  
