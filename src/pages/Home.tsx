@@ -21,7 +21,7 @@ import {
    
 } from "@/Components/ui/carousel"
 import { Card,CardContent } from "@/Components/ui/card";
-import { Star, StarIcon, StarOff } from "lucide-react";
+import { Star} from "lucide-react";
 
 
 
