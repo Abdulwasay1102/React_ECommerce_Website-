@@ -10,6 +10,8 @@ import frok from "@/assets/images/frok.jpg"
 import gift from "@/assets/images/gifts.jpg"
 import perfume from "@/assets/images/Luxery_perfume.jpg"
 import { Button } from "@/Components/ui/button";
+import customer1 from "@/assets/images/customer1.jpg"
+import customer2 from "@/assets/images/customer2.jpg"
 
 
 import {
@@ -19,6 +21,7 @@ import {
    
 } from "@/Components/ui/carousel"
 import { Card,CardContent } from "@/Components/ui/card";
+import { Star, StarIcon, StarOff } from "lucide-react";
 
 
 
@@ -199,8 +202,8 @@ const images =[
         {images.map((index)=>(
           <CarouselItem key={index.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6 ">
             <div className="p-1">
-              <Card className="gap-10 overflow-hidden ">
-                <CardContent className="p-0 ">
+              <Card className="gap-10 overflow-hidden rounded-3xl  ">
+                <CardContent className="p-0   ">
                    <AspectRatio ratio={1/1}>
                    <img className="w-full h-full rounded-2xl object-cover " src={index.img} alt="" />
                    {index.des}
@@ -220,18 +223,37 @@ const images =[
       {/* ********* Big perfume image start here **************** */}
       
  
-       <div className="perfumeimg mt-10 relative">
+       <div className="perfumeimg mt-10 relative bg-[#E4D7C7] h-55 sm:h-[400px] md:h-auto overflow-hidden  ">
         <AspectRatio ratio={1512 / 638}>
-       <img className="w-full h-full object-cover" src={perfume} alt="" /> 
-       <div className=" absolute inset-0 md:flex  md:flex-col md:justify-center md:items-start   sm:pl-14 pl-10   lg:p-14">
-        <h1 className="lg:text-8xl md:text-7xl sm:text-6xl  text-2xl font-cinzel   ">
-          Luxury <br className="hidden md:block" /> Perfumes
-        </h1>
-           <p className=" mt-2 sm:text-sm text-xs lg:text-xl -ml-5 font-cinzel tracking-tighter ">feel The luxury with our perfume collection</p>
-           <Button  className="font-cormorant rounded-3xl py-3 text-[gold] mt-10 -ml-5 sm:mt-5 sm:ml-20  md:mt-8 md:ml-28 lg:ml-36  ">Shop Now </Button>
-       
+       <img className="w-full h-full  md:object-cover object-cover sm:object-cover md:block relative top-8 "
+       style={{
+            // This fades the left and top edges so the "box" disappears
+            maskImage: 'linear-gradient(to left, black 70%, transparent 100%), linear-gradient(to top, black 80%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to left, black 70%, transparent 100%), linear-gradient(to top, black 80%, transparent 100%)',
+            maskComposite: 'intersect',
+            WebkitMaskComposite: 'source-in'
+          }}
+       src={perfume} alt="" /> 
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4
+                md:flex md:flex-col md:justify-center md:items-start
+                sm:pl-14 lg:p-14 gap-">
 
-       </div>
+  <h1 className="text-3xl lg:text-8xl md:text-7xl md:-ml-10 md:mt-10 sm:text-6xl sm:relative sm:bottom-15 font-cinzel">
+    Luxury <br className="hidden md:block" /> Perfumes
+  </h1>
+<div>
+  <p className="mt-2 text-[10px] tracking-tighter md:-ml-5 sm:text-sm lg:text-xl font-cinzel md:tracking-tighter sm:relative sm:bottom-15">
+    feel The luxury with our perfume collection
+  </p>
+  </div>
+<div className=" relative lg:top-20 top-20 sm:top-40 md:top-10 md:block">
+  <Button className="font-cormorant rounded-3xl py-2 px-6 md:px-8 text-[gold]
+                     mt-6  lg:bottom-20 md:relative md:bottom-10 md:ml-14 lg:ml-28">
+    Shop Now
+  </Button>
+</div>
+</div>
+
         </AspectRatio>
        </div>
         {/* ********* Big perfume image End here **************** */}
@@ -266,9 +288,59 @@ const images =[
      </div>
      </div>
       {/* ********* Triangle Image Carosule End  haver **************** */}
+
+      {/* ********* Customer Reviews section Start here **************** */}
+      
       <div className="flex justify-center items-center">
         <h1 className="font-cormorant text-3xl mt-2 ">Customer Reviews </h1>
       </div>
+
+    <div className="customer review flex justify-center w-full  ">
+
+      <div className="main  h-auto grid  grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 md:gap-12 lg:gap-16 p-6 max-w-6xl w-full">
+        <div className="card1  ">
+          <Card className=" overflow-hidden rounded-half shadow-black ">
+                <CardContent className=" p-0" >
+                <AspectRatio ratio={577/435}>
+                   <img className="w-full h-full   " src={customer1} alt="" />
+                </AspectRatio>
+                </CardContent>
+              </Card>
+
+              <div className="star flex justify-center gap-3 mt-5 ">
+                <Star fill="#FFD700" color="#FFD700"/>  <Star fill="#FFD700" color="#FFD700"/>  <Star fill="#FFD700" color="#FFD700"/>  <Star/> <Star/>  <Star/> 
+              </div>
+              <div className="paragraph mt-3">
+                <p className="font-cormorant-infant">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero eligendi dolorum reprehenderit corporis exercitationem accusantium, laboriosam facilis. Consequuntur fugit ratione neque possimus nisi provident suscipit quam? Debitis voluptas unde illo.</p>
+              </div>
+
+        </div>
+        <div className="card2 ">
+           <Card className=" overflow-hidden rounded-half shadow-black ">
+                <CardContent className=" p-0" >
+                <AspectRatio ratio={577/435}>
+                   <img className="w-full h-full   " src={customer2} alt="" />
+                </AspectRatio>
+                </CardContent>
+              </Card>
+              
+              <div className="star flex justify-center gap-3 mt-5 ">
+                <Star fill="#FFD700" color="#FFD700"/>  <Star fill="#FFD700" color="#FFD700"/>  <Star/>  <Star/> <Star/>  <Star/>  
+              </div>
+                 <div className="paragraph mt-3">
+                <p className="font-cormorant-infant">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero eligendi dolorum reprehenderit corporis exercitationem accusantium, laboriosam facilis. Consequuntur fugit ratione neque possimus nisi provident suscipit quam? Debitis voluptas unde illo.</p>
+              </div>
+        </div>
+      </div>
+    </div>
+{/* ********* Customer Reviews section End here **************** */}
+
+{/* *********   BLACK BAR Start Here **************** */}
+
+
+
+
+
       
      
     
