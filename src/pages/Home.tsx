@@ -12,6 +12,9 @@ import perfume from "@/assets/images/Luxery_perfume.jpg"
 import { Button } from "@/Components/ui/button";
 import customer1 from "@/assets/images/customer1.jpg"
 import customer2 from "@/assets/images/customer2.jpg"
+import returnicon from "@/assets/images/Return_icon.png"
+import gifticon from "@/assets/images/Gift_icon.png"
+import supporticon from "@/assets/images/Support_icon.png"
 
 
 import {
@@ -22,6 +25,7 @@ import {
 } from "@/Components/ui/carousel"
 import { Card,CardContent } from "@/Components/ui/card";
 import { Star} from "lucide-react";
+import CircularCarousel from "@/Components/CircularCarousel";
 
 
 
@@ -238,11 +242,11 @@ const images =[
                 md:flex md:flex-col md:justify-center md:items-start
                 sm:pl-14 lg:p-14 gap-">
 
-  <h1 className="text-3xl lg:text-8xl md:text-7xl md:-ml-10 md:mt-10 sm:text-6xl sm:relative sm:bottom-15 font-cinzel">
+  <h1 className="text-2xl  lg:text-8xl md:text-7xl md:-ml-10 md:mt-10 sm:text-6xl sm:relative sm:bottom-15 font-cinzel">
     Luxury <br className="hidden md:block" /> Perfumes
   </h1>
 <div>
-  <p className="mt-2 text-[10px] tracking-tighter md:-ml-5 sm:text-sm lg:text-xl font-cinzel md:tracking-tighter sm:relative sm:bottom-15">
+  <p className="mb-5 text-[10px] tracking-tighter md:-ml-5 sm:text-sm lg:text-xl font-cinzel md:tracking-tighter sm:relative sm:bottom-15">
     feel The luxury with our perfume collection
   </p>
   </div>
@@ -292,7 +296,7 @@ const images =[
       {/* ********* Customer Reviews section Start here **************** */}
       
       <div className="flex justify-center items-center">
-        <h1 className="font-cormorant text-3xl mt-2 ">Customer Reviews </h1>
+        <h1 className="font-cormorant text-3xl mt-2 text-black  ">Customer Reviews </h1>
       </div>
 
     <div className="customer review flex justify-center w-full  ">
@@ -310,7 +314,7 @@ const images =[
               <div className="star flex justify-center gap-3 mt-5 ">
                 <Star fill="#FFD700" color="#FFD700"/>  <Star fill="#FFD700" color="#FFD700"/>  <Star fill="#FFD700" color="#FFD700"/>  <Star/> <Star/>  <Star/> 
               </div>
-              <div className="paragraph mt-3">
+              <div className="paragraph mt-3 text-center md:text-left">
                 <p className="font-cormorant-infant">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero eligendi dolorum reprehenderit corporis exercitationem accusantium, laboriosam facilis. Consequuntur fugit ratione neque possimus nisi provident suscipit quam? Debitis voluptas unde illo.</p>
               </div>
 
@@ -327,7 +331,7 @@ const images =[
               <div className="star flex justify-center gap-3 mt-5 ">
                 <Star fill="#FFD700" color="#FFD700"/>  <Star fill="#FFD700" color="#FFD700"/>  <Star/>  <Star/> <Star/>  <Star/>  
               </div>
-                 <div className="paragraph mt-3">
+                 <div className="paragraph mt-3 text-center md:text-left">
                 <p className="font-cormorant-infant">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero eligendi dolorum reprehenderit corporis exercitationem accusantium, laboriosam facilis. Consequuntur fugit ratione neque possimus nisi provident suscipit quam? Debitis voluptas unde illo.</p>
               </div>
         </div>
@@ -336,8 +340,46 @@ const images =[
 {/* ********* Customer Reviews section End here **************** */}
 
 {/* *********   BLACK BAR Start Here **************** */}
+<div className="bg-black w-full py-10 px-4">
+  <div className="max-w-7xl mx-auto flex flex-col  md:flex-row  gap-10 justify-between items-start">
+    
+    {/* Box 1: Return & Exchange */}
+    <div className="flex-1 w-full flex flex-col items-center text-center">
+      <img src={returnicon} className="h-10 mb-4" alt="Return Icon" />
+      <h1 className="font-cormorant text-white tracking-wider text-2xl lg:text-3xl uppercase">
+        Return & Exchange
+      </h1>
+      <p className="text-gray-300 font-cormorant-infant tracking-tight mt-2 italic">
+        Committed to return the money in 30 days
+      </p>
+    </div>
+
+  
+    <div className="flex-1 w-full flex flex-col items-center text-center">
+      <img src={gifticon} className="h-10 mb-4" alt="Gift Icon" />
+      <h1 className="font-cormorant text-white tracking-wider text-2xl lg:text-3xl uppercase">
+        Receive Gift Cards
+      </h1>
+      <p className="text-gray-300 font-cormorant-infant tracking-tight mt-2 italic">
+        Receive gift all over order $50
+      </p>
+    </div>
 
 
+    <div className="flex-1 w-full flex flex-col items-center text-center">
+      <img src={supporticon} className="h-10 mb-4" alt="Support Icon" />
+      <h1 className="font-cormorant text-white tracking-wider text-2xl lg:text-3xl uppercase">
+        Online Support
+      </h1>
+      <p className="text-gray-300 font-cormorant-infant tracking-tight mt-2 italic">
+        24/7 online support is always ready
+      </p>
+    </div>
+
+  </div>
+</div>
+{/* ********* Our Team Carousel Start from here **************** */}
+<CircularCarousel/>
 
 
 
