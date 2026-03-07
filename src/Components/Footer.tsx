@@ -2,7 +2,7 @@ import logo from "../assets/images/logo.png";
 
 import visa from "../assets/images/Visa.png";
 import mastercard from "../assets/images/mastercard.png";
-import paypal from "../assets/images/paypal.png";
+import paypal from "../assets/images/Paypal.png";
 import applepay from "../assets/images/applepay.png";
 import googlepay from "../assets/images/googlepay.png";
 
