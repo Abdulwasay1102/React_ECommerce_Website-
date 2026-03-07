@@ -177,9 +177,9 @@ const autoplayIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   return (
     <div className="testimonial-container">
-      <div className="testimonial-grid">
+      <div className="testimonial-grid  ">
         {/* Images */}
-        <div className="image-container" ref={imageContainerRef}>
+        <div className="image-container  " ref={imageContainerRef}>
           {testimonials.map((testimonial, index) => (
             <img
               key={testimonial.src}
@@ -192,7 +192,7 @@ const autoplayIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
           ))}
         </div>
         {/* Content */}
-        <div className="testimonial-content">
+        <div className="testimonial-content ">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
@@ -201,9 +201,12 @@ const autoplayIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
               animate="animate"
               exit="exit"
               transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="content-wrapper"
             >
+              <div className="text-content">
               <h3
-                className="name"
+              
+                className="name min-w-[166px] text-center sm:text-left sm:w-auto"
                 style={{ color: colorName, fontSize: fontSizeName }}
               >
                 {activeTestimonial.name}
@@ -214,7 +217,9 @@ const autoplayIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
               >
                 {activeTestimonial.designation}
               </p>
+              
               <motion.p
+             
                 className="quote"
                 style={{ color: colorTestimony, fontSize: fontSizeQuote }}
               >
@@ -242,6 +247,7 @@ const autoplayIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
                   </motion.span>
                 ))}
               </motion.p>
+              </div>
             </motion.div>
           </AnimatePresence>
           <div className="arrow-buttons">
@@ -273,72 +279,156 @@ const autoplayIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
         </div>
       </div>
       <style>{`
-        .testimonial-container {
-          width: 100%;
-          max-width: 56rem;
-          padding: 2rem;
-        }
-        .testimonial-grid {
-          display: grid;
-          gap: 5rem;
-        }
-        .image-container {
-          position: relative;
-          width: 100%;
-          height: 24rem;
-          perspective: 1000px;
-        }
-        .testimonial-image {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 1.5rem;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        .testimonial-content {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-        }
-        .name {
-          font-weight: bold;
-          margin-bottom: 0.25rem;
-        }
-        .designation {
-          margin-bottom: 2rem;
-        }
-        .quote {
-          line-height: 1.75;
-        }
-        .arrow-buttons {
-          display: flex;
-          gap: 1.5rem;
-          padding-top: 3rem;
-        }
-        .arrow-button {
-          width: 2.7rem;
-          height: 2.7rem;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          transition: background-color 0.3s;
-          border: none;
-        }
-        .word {
-          display: inline-block;
-        }
-        @media (min-width: 768px) {
-          .testimonial-grid {
-            grid-template-columns: 1fr 1fr;
-          }
-          .arrow-buttons {
-            padding-top: 0;
-          }
-        }
-      `}</style>
+  .testimonial-container {
+    width: 100%;
+    max-width: 56rem;
+    padding: 2rem;
+    height: 100%;
+  }
+  
+  .testimonial-grid {
+    display: grid;
+    gap: 5rem;
+    height: 100%;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    perspective: 1000px;
+  }
+  
+  .testimonial-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .testimonial-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .name {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  
+  .designation {
+    margin-bottom: 1rem;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #454545;
+  }
+  
+  .quote {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #171717;
+    margin: 0;
+    overflow: visible;
+    /* Better text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Style for individual words */
+  .quote span {
+    display: inline-block;
+    margin-right: 0.25rem;
+  }
+  
+  .arrow-buttons {
+    display: flex;
+    gap: 1.5rem;
+    padding-top: 2rem;
+    flex-shrink: 0;
+  }
+  
+  .arrow-button {
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+  }
+  
+  @media (min-width: 768px) {
+    .testimonial-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .arrow-buttons {
+      padding-top: 0;
+    }
+    
+    .quote {
+      font-size: 17px;
+      line-height: 1.6;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .quote {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    
+    .designation {
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .testimonial-container {
+      padding: 1rem;
+    }
+    
+    .testimonial-grid {
+      gap: 2rem;
+    }
+    
+    .name {
+      font-size: 24px;
+    }
+    
+    .designation {
+      font-size: 16px;
+      margin-bottom: 0.75rem;
+    }
+    
+    .quote {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+
+  
+`}</style>
     </div>
   );
 };
