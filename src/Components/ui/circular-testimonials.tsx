@@ -38,8 +38,8 @@ interface CircularTestimonialsProps {
 function calculateGap(width: number) {
   const minWidth = 1024;
   const maxWidth = 1456;
-  const minGap = 60;
-  const maxGap = 86;
+  const minGap = 40;
+  const maxGap = 60;
   if (width <= minWidth) return minGap;
   if (width >= maxWidth)
     return Math.max(minGap, maxGap + 0.06018 * (width - maxWidth));
@@ -126,7 +126,9 @@ const autoplayIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   // Compute transforms for each image (always show 3: left, center, right)
   function getImageStyle(index: number): React.CSSProperties {
     const gap = calculateGap(containerWidth);
-    const maxStickUp = gap * 0.8;
+    const maxStickUp = gap * 0.2;
+    
+   
     // const offset = (index - activeIndex + testimonialsLength) % testimonialsLength;
     // const zIndex = testimonialsLength - Math.abs(offset);
     const isActive = index === activeIndex;
@@ -295,6 +297,8 @@ const autoplayIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   .image-container {
     position: relative;
     width: 100%;
+    max-width: 400px; /* Add this */
+  margin: 0 auto;
     aspect-ratio: 1 / 1;
     perspective: 1000px;
   }

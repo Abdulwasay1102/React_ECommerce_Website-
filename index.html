@@ -26,5 +26,10 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+  // This prevents the "DEFINES is not defined" error in the browser
+  window.__DEFINES__ = {};
+  window.process = { env: {} };
+</script>
   </body>
 </html>

@@ -31,12 +31,12 @@ const CircularCarousel = () => {
   return (
     <>
     <div className="">
-  <h1 className="text-center mt-3  mb-2 font-cormorant text-4xl uppercase ">
+  <h1 className="text-center mt-3  font-cormorant text-4xl uppercase ">
     OUR TEAM
   </h1>
   
-</div>
-  <section className='h-[calc(100vh-120px)] min-h-[800px] w-full'>
+</div >
+  <section className='w-full  '>
    
     <div className="bg-white p-16 rounded-lg min-h-[300px] flex flex-wrap gap-6 items-center justify-center relative shadow-black">
       <div
