@@ -38,7 +38,7 @@ const Footer = () => {
 
             <p className="text-sm text-gray-400 leading-relaxed mb-6">
               For any queries, please feel free to contact us on
-              support@majora.com or call us at +01 2345678945
+              support@majora.com or call us at +92 2345678945
             </p>
 
             {/* Social Icons */}

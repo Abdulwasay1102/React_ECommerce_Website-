@@ -1,13 +1,8 @@
 import * as React from "react"
-import Navbar from "@/Components/Navbar"
 import { AspectRatio } from "@/Components/ui/aspect-ratio"
 import Womenimg from "@/assets/images/women_img.jpg";
 import star from "@/assets/images/Star.png"
 import AutoScroll from "embla-carousel-auto-scroll"
-import watch from "@/assets/images/Watch.jpg"
-import Mencolth from "@/assets/images/Mencloth.jpg"
-import frok from "@/assets/images/frok.jpg"
-import gift from "@/assets/images/gifts.jpg"
 import perfume from "@/assets/images/Luxery_perfume.jpg"
 import { Button } from "@/Components/ui/button";
 import customer1 from "@/assets/images/customer1.jpg"
@@ -15,8 +10,8 @@ import customer2 from "@/assets/images/customer2.jpg"
 import returnicon from "@/assets/images/Return_icon.png"
 import gifticon from "@/assets/images/Gift_icon.png"
 import supporticon from "@/assets/images/Support_icon.png"
-
-
+import { Link } from "react-router-dom";
+import { images } from "@/Data/products";
 import {
   Carousel,
   CarouselContent,
@@ -29,52 +24,19 @@ import { Card,CardContent } from "@/Components/ui/card";
 import { Star} from "lucide-react";
 import CircularCarousel from "@/Components/CircularCarousel";
 import Newsattler from "@/Components/Newsattler";
-import Footer from "@/Components/Footer";
 
 
 
 
 
 const Home = () => {
-const images =[
-  {
-  id: 1,
-  img: watch,
-  des: "Rolex",
- },
-   {
-  id: 2,
-  img: gift,
-   des: "Gift",
- },  {
-  id: 3,
-  img: Mencolth,
-   des: "Cloths",
- },  {
-  id: 4,
-  img: frok,
-   des: "lorem",
- },   {
-  id: 5,
-  img: gift,
-   des: "Gift",
- },  {
-  id: 6,
-  img: Mencolth,
-   des: "Lorem",
- },  {
-  id: 7,
-  img: watch,
-   des: "lorem",
- },
-]
-
+ 
   const plugin = React.useRef(
     AutoScroll({ speed: 1, stopOnInteraction: false, stopOnMouseEnter: false,  playOnInit: true,    })
   )
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
     {/* ******************** MAIN LAYOUT START FROM HERE ******************* */}
     <main className="h-auto ">
       <div className="main relative overflow-hidden">
@@ -207,28 +169,29 @@ const images =[
      
       <Carousel className="w-full  lg:max-w-350 px-4 overflow-visible">
       <CarouselContent className="pl-1 md:pl-0 lg:pl-10">
-        {images.map((index)=>(
-          <CarouselItem key={index.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6 ">
-            <div className="p-1 group">
-              
+        {images.map((product)=>(
+          <CarouselItem key={product.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6 ">
+            <div className="p-1 group relative z-10">
+              <Link to={`/product/${product.id}`} className="block" >
               <Card className="gap-10 overflow-hidden rounded-3xl  transition-all duration-500
              hover:-translate-y-2 hover:shadow-2xl cursor-pointer ">
                 <CardContent className="p-0   ">
                    <AspectRatio ratio={1/1}>
                    <img className="w-full h-full rounded-2xl object-cover transition-transform duration-600
-                   group-hover:scale-120 " src={index.img} alt="" />
+                   group-hover:scale-120 " src={product.img} alt="" />
                     <div className="absolute bottom-0 w-full
                               text-white text-center py-2
                         bg-gradient-to-t from-black/70 to-transparent
                         opacity-0 group-hover:opacity-100
                         transition duration-500">
 
-                        {index.des}
+                        {product.des}
 
                           </div>
                    </AspectRatio>
                 </CardContent>
               </Card>
+              </Link>
             </div> 
           </CarouselItem>
         ))}
@@ -287,27 +250,29 @@ const images =[
      
       <Carousel className="w-full  lg:max-w-350 px-4 overflow-visible">
       <CarouselContent className="pl-1 md:pl-0 lg:pl-10">
-        {images.map((index)=>(
-          <CarouselItem key={index.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6 ">
-            <div className="p-1 group">
+        {images.map((product)=>(
+          <CarouselItem key={product.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6 ">
+            <div className="p-1 group relative z-10">
+              <Link to={`product/${product.id}`}>
               <Card className="gap-10 overflow-hidden transition-all duration-500
                      hover:-translate-y-2 hover:shadow-xl  ">
                 <CardContent className="p-0 ">
                    <AspectRatio ratio={1/1.5}>
                    <img className="w-full h-full rounded-2xl object-cover transition-all duration-500
-                      hover:-translate-y-2 hover:shadow-xl " src={index.img} alt="" />
+                      hover:-translate-y-2 hover:shadow-xl " src={product.img} alt="" />
                   <div className="absolute bottom-0 w-full
                               text-white text-center py-2
                         bg-gradient-to-t from-black/70 to-transparent
                         opacity-0 group-hover:opacity-100
                         transition duration-500">
 
-                        {index.des}
+                        {product.des}
 
                           </div>
                    </AspectRatio>
                 </CardContent>
               </Card>
+              </Link>
             </div>
           </CarouselItem>
         ))}
@@ -422,27 +387,29 @@ const images =[
      
       <Carousel className="w-full  lg:max-w-350 px-4 overflow-visible">
       <CarouselContent className="pl-1 md:pl-0 lg:pl-10">
-        {images.map((index)=>(
-          <CarouselItem key={index.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6 ">
+        {images.map((product)=>(
+          <CarouselItem key={product.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6 ">
             <div className="p-1 group">
+              <Link to={`product/${product.id}`}>
               <Card className="gap-10 overflow-hidden transition-all duration-500
                      hover:-translate-y-2 hover:shadow-xl  ">
                 <CardContent className="p-0 ">
                    <AspectRatio ratio={1/1.5}>
                    <img className="w-full h-full rounded-2xl object-cover transition-all duration-500
-                      hover:-translate-y-2 hover:shadow-xl " src={index.img} alt="" />
+                      hover:-translate-y-2 hover:shadow-xl " src={product.img} alt="" />
                   <div className="absolute bottom-0 w-full
                               text-white text-center py-2
                         bg-gradient-to-t from-black/70 to-transparent
                         opacity-0 group-hover:opacity-100
                         transition duration-500">
 
-                        {index.des}
+                        {product.des}
 
                           </div>
                    </AspectRatio>
                 </CardContent>
               </Card>
+              </Link>
             </div>
           </CarouselItem>
         ))}
@@ -453,21 +420,22 @@ const images =[
     </Carousel>
      </div>
      <div className="flex justify-center items-center mt-4">
+      <Link to={"/category"}>
       <Button className="px-8 py-2 rounded-full
 border border-yellow-400 text-yellow-400
 hover:bg-yellow-400 hover:text-black
-transition duration-300">View All</Button>
+transition duration-300 cursor-pointer">View All</Button>
+</Link>
      </div>
 </div>
-
+{/* ********* Last Carousel End Here**************** */}
+{/* ********* Newsattler Start Here**************** */}
 
 <div>
   <Newsattler/>
 </div>
+{/* ********* Newsattler End Here**************** */}
 
-<div>
-  <Footer/>
-</div>
 
       
      

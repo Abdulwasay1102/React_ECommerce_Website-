@@ -4,8 +4,14 @@ import { Search } from 'lucide-react'
 import { UserCircle} from 'lucide-react'
 import { Menu } from "lucide-react"; 
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/Components/ui/sheet";
+import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
 const Navbar = () => {
+  const [isopen, setIsopen] =useState(false);
+  const closesheet = ()=>{
+    setIsopen(false);
+  }
   return (
    <>
    
@@ -25,8 +31,8 @@ const Navbar = () => {
     <div className="relative w-full flex items-center justify-center">
       
       <nav className="hidden md:flex gap-4 lg:gap-8 text-xs tracking-widest text-white">
-        <a className="hover:text-gray-300 transition cursor-pointer font-manrope text-[14px]">COLLECTION</a>
-        <a className="hover:text-gray-300 transition cursor-pointer font-manrope text-[14px]">HOME</a>
+        <NavLink to={'/category'} className="hover:text-gray-300 transition cursor-pointer font-manrope text-[14px]">COLLECTION</NavLink>
+        <NavLink to={'/'} className="hover:text-gray-300 transition cursor-pointer font-manrope text-[14px]">HOME</NavLink>
         <a className="hover:text-gray-300 transition cursor-pointer font-manrope text-[14px]">ABOUT</a>
         <a className="hover:text-gray-300 transition cursor-pointer font-manrope text-[14px]">CONTACT</a>
         <a className="hover:text-gray-300 transition cursor-pointer font-manrope text-[14px]">STORES</a>
@@ -43,19 +49,19 @@ const Navbar = () => {
     </div>
   </div>
   <div className="md:hidden">
-  <Sheet>
+  <Sheet open={isopen} onOpenChange={setIsopen}>
     <SheetTrigger asChild>
       <button className="text-white p-2">
         <Menu size={28} />
       </button>
     </SheetTrigger>
 
-    <SheetContent side="left" className="bg-black text-white border-gray-800">
+    <SheetContent side="left"  className="bg-black text-white border-gray-800">
       <SheetTitle className="text-white">Menu</SheetTitle>
       
       <nav className="flex flex-col gap-6 mt-10">
-        <a className="text-lg font-manrope tracking-widest">COLLECTION</a>
-        <a className="text-lg font-manrope tracking-widest">HOME</a>
+        <NavLink to={"/category"} onClick={closesheet} className="text-lg font-manrope tracking-widest" >COLLECTION</NavLink>
+        <NavLink to={"/"} onClick={closesheet} className="text-lg font-manrope tracking-widest" >HOME</NavLink>
         <a className="text-lg font-manrope tracking-widest">ABOUT</a>
         <a className="text-lg font-manrope tracking-widest">CONTACT</a>
         <a className="text-lg font-manrope tracking-widest">STORES</a>

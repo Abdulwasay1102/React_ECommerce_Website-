@@ -155,3 +155,38 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* SHEET ANIMATON CODE  */
+
+@layer utilities {
+  /* This ensures that when Radix sets data-state to closed, the animation plays */
+  [data-state='closed'] {
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+  }
+
+  [data-state='open'] {
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+}
+/* Update these in your CSS file */
+[data-state='open'] {
+  animation: enter 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+[data-state='closed'] {
+  animation: exit 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes enter {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes exit {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
