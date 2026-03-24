@@ -119,10 +119,10 @@ const Home = () => {
     />
   </span> <br /> &  <br /> Luxery
     </h1>
-
-     <button className="px-8 py-3 absolute top-[600px]  rounded-bl-2xl sm:static md:static lg:static  lg:mt-16   bg-white text-black font-manrope tracking-widest hover:bg-[#b4aaaa] transition-colors duration-300 rounded-sm uppercase text-sm md:text-base">
+     
+     <Link to={"/category"} className="px-8 py-3 cursor-pointer absolute top-[600px]  rounded-bl-2xl sm:static md:static lg:static  lg:mt-16   bg-white text-black font-manrope tracking-widest hover:bg-[#b4aaaa] transition-colors duration-300 rounded-sm uppercase text-sm md:text-base">
       Explore Collection
-    </button>
+    </Link>
         
         </div>
       
@@ -204,8 +204,7 @@ const Home = () => {
 
       {/* ********* Big perfume image start here **************** */}
       
- 
-       <div className="perfumeimg mt-10 relative bg-[#E4D7C7] h-55 sm:h-[400px] md:h-auto overflow-hidden  ">
+   <div className="perfumeimg mt-10 relative bg-[#E4D7C7] h-55 sm:h-[400px] md:h-auto overflow-hidden  ">
         <AspectRatio ratio={1512 / 638}>
        <img className="w-full h-full  md:object-cover object-cover sm:object-cover md:block relative top-8 "
        style={{
@@ -238,6 +237,7 @@ const Home = () => {
 
         </AspectRatio>
        </div>
+
         {/* ********* Big perfume image End here **************** */}
            {/* ********* Triangle Image Carosule start haver **************** */}
       <div>

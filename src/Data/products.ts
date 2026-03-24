@@ -8,38 +8,38 @@ export const images =[
   id: 1,
   img: watch,
   des: "Rolex",
-  price:"3000$"
+  price:3000
  },
    {
   id: 2,
   img: gift,
    des: "Gift",
-   price:"100$"
+   price:100
    
  },  {
   id: 3,
   img: Mencolth,
    des: "Cloths",
-    price:"120$"
+    price:120
  },  {
   id: 4,
   img: frok,
    des: "Women Frok",
-    price:"50$"
+    price:50
  },   {
   id: 5,
   img: gift,
    des: "Gift",
-    price:"100$"
+    price:110
  },  {
   id: 6,
   img: Mencolth,
    des: "Jeans Shirt",
-    price:"400$"
+    price:400
  },  {
   id: 7,
   img: watch,
    des: "Rolex",
-    price:"1000$"
+    price:1000
  },
 ]

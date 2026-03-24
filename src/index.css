@@ -190,3 +190,15 @@
   from { transform: translateX(0); }
   to { transform: translateX(-100%); }
 }
+
+
+/* POP UP OF THE CART ICON  */
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.animate-pop {
+  animation: pop 0.2s ease-out;
+}

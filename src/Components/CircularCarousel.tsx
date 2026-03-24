@@ -30,6 +30,7 @@ const CircularCarousel = () => {
 
   return (
     <>
+    <section className=''>
     <div className="">
   <h1 className="text-center mt-3  font-cormorant text-4xl uppercase ">
     OUR TEAM
@@ -38,7 +39,7 @@ const CircularCarousel = () => {
 </div >
   <section className='w-full  '>
    
-    <div className="bg-white p-16 rounded-lg min-h-[300px] flex flex-wrap gap-6 items-center justify-center relative shadow-black">
+    <div className="bg-[#e6ded9]  p-16 rounded-lg min-h-[300px] flex flex-wrap gap-6 items-center justify-center relative shadow-black">
       <div
         className="items-center justify-center relative flex"
         style={{ maxWidth: "1456px" }}
@@ -50,7 +51,7 @@ const CircularCarousel = () => {
 
 
 
-        <CircularTestimonials
+        <CircularTestimonials 
           testimonials={testimonials}
           autoplay={true}
           colors={{
@@ -60,6 +61,7 @@ const CircularCarousel = () => {
             arrowBackground: "#141414",
             arrowForeground: "#f1f1f7",
             arrowHoverBackground: "#00A6FB",
+            
           }}
         //  fontSizes={{
         //       name: "clamp(40px, 4vw, 28px)",      // CHANGE this
@@ -79,6 +81,7 @@ const CircularCarousel = () => {
     </div>
 
     
+  </section>
   </section>
 </>
   )

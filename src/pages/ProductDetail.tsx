@@ -13,9 +13,9 @@ import { images } from "@/Data/products";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import { Star,StarHalf } from "lucide-react";
 import { useState } from "react";
-import { Button } from "@/Components/ui/button"
-import { ButtonGroup } from "@/Components/ui/button-group"
-import { MinusIcon, PlusIcon } from "lucide-react"
+import { useEffect } from "react";
+import { useDispatch} from "react-redux";
+import { addtocart } from "@/Slices/CartSlice";
 
 
 
@@ -33,7 +33,33 @@ const sizes = ["S", "M", "L", "XL"];
     { name: "blue", value: "bg-[#2F3E5C]" },
   ];
 
+useEffect(() => {
+ window.scrollTo(0,0)
+}, []);
 
+
+const dispatch = useDispatch()
+
+const handleAddToCart = () => {
+  if (!product) return;
+   
+  dispatch(addtocart({
+    ...product,
+    size: selectedSize,
+    color: selectedColor,
+      qantity: quantity
+  }));
+};
+
+const [quantity] = useState(1);
+
+// const increaseQty = () => {
+//   setQuantity(prev => prev + 1);
+// };
+
+// const decreaseQty = () => {
+//   setQuantity(prev => (prev > 1 ? prev - 1 : 1));
+// };
 
   return (
     <>
@@ -68,7 +94,7 @@ const sizes = ["S", "M", "L", "XL"];
   <div className="flex flex-row lg:flex-col gap-5 p-5  order-2 lg:order-1 shrink-0">
     {[1, 2, 3].map((item) => (
       <div key={item} className="lg:w-30 lg:h-30   bg-white rounded-lg  overflow-hidden cursor-pointer">
-        <img src={product?.img} alt="thumb" className="w-full h-full object-cover opacity-60 hover:opacity-100" />
+        <img src={product?.img} alt="thumb" className="w-full h-full object-cover lg:opacity-60 lg:hover:opacity-100" />
       </div>
     ))}
   </div>
@@ -101,8 +127,8 @@ const sizes = ["S", "M", "L", "XL"];
                 <span>4.5/5</span>
               </div>
                <div className="flex items-center gap-3 mt-3">
-        <span className="text-xl font-semibold font-cormorant-infant">{product?.price}</span>
-        <span className="line-through text-gray-500">{product?.price}</span>
+        <span className="text-xl font-semibold font-cormorant-infant">{product?.price}$</span>
+        <span className="line-through text-gray-500">{product?.price}$</span>
         <span className="text-xs bg-pink-200 text-red-500 px-2 py-1 rounded-full">
           -10%
         </span>
@@ -170,33 +196,38 @@ const sizes = ["S", "M", "L", "XL"];
       <div className="mt-5 flex items-center gap-4">
   
  
-  <ButtonGroup
+  {/* <ButtonGroup
     orientation="horizontal"
     className="flex items-center bg-gray-300 rounded-full px-6 py-2 gap-6"
   >
     <Button
+    onClick={decreaseQty}
       variant="ghost"
       size="icon"
-      className="bg-transparent hover:bg-transparent shadow-none"
+      className="bg-transparent hover:bg-transparent shadow-none cursor-pointer"
     >
       <MinusIcon />
     </Button>
 
-    <span className="text-sm font-medium">1</span>
+    <span className="text-sm font-medium">{quantity}</span>
 
     <Button
+    onClick={increaseQty}
       variant="ghost"
       size="icon"
-      className="bg-transparent hover:bg-transparent shadow-none"
+      className="bg-transparent hover:bg-transparent shadow-none cursor-pointer"
     >
       <PlusIcon />
     </Button>
-  </ButtonGroup>
+  </ButtonGroup> */}
 
   {/* Add to Cart */}
-  <button className="flex-1 bg-black text-white py-3 rounded-full text-sm tracking-wide">
+  
+  <button className="flex-1 bg-black text-white py-3 rounded-full text-sm tracking-wide cursor-pointer" onClick={handleAddToCart}>
     Add to Cart
   </button>
+ 
+
 
 </div>  
       

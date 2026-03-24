@@ -1,6 +1,10 @@
 import Footer from "@/Components/Footer"
 import Navbar from "@/Components/Navbar"
+import AboutUs from "@/pages/About"
+import Cart from "@/pages/Cart"
 import Category from "@/pages/Category"
+import ContactUs from "@/pages/Contact"
+import FeedbackForm from "@/pages/Feedback"
 import Home from "@/pages/Home"
 import { ProductDetail } from "@/pages/ProductDetail"
 import { createBrowserRouter,  RouterProvider,Outlet } from "react-router-dom"
@@ -9,13 +13,11 @@ import { createBrowserRouter,  RouterProvider,Outlet } from "react-router-dom"
 const Rootlayout = ()=>{
 
  return(
-  <div>
-    <Navbar/>
-
-    <Outlet/>
-
-    <Footer/>
-  </div>
+<div className="bg-[#e6ded9] min-h-screen">
+  <Navbar />
+  <Outlet />
+  <Footer />
+</div>
  )
 
 }
@@ -40,7 +42,26 @@ const Layout = () => {
              {
               path:"category",
               element:<Category/>
+             },
+             {
+              path:"cart",
+              element:<Cart/>
+             },
+             {
+              path:"aboutus",
+              element: <AboutUs/>
+             },
+              {
+              path:"contactus",
+              element:<ContactUs/>
+              
+             },
+             {
+              path:"feedback",
+              element:<FeedbackForm/>
              }
+             
+             
             ]
         }
     ])
