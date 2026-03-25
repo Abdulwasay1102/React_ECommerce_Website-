@@ -16,6 +16,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch} from "react-redux";
 import { addtocart } from "@/Slices/CartSlice";
+import { toast } from "sonner";
 
 
 
@@ -223,7 +224,12 @@ const [quantity] = useState(1);
 
   {/* Add to Cart */}
   
-  <button className="flex-1 bg-black text-white py-3 rounded-full text-sm tracking-wide cursor-pointer" onClick={handleAddToCart}>
+  <button className="flex-1 bg-black text-white py-3 rounded-full text-sm tracking-wide cursor-pointer" onClick={() => {
+    handleAddToCart();
+    toast.success("Product is added to cart ");
+  }}>
+  
+      
     Add to Cart
   </button>
  

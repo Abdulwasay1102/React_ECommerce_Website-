@@ -12,6 +12,7 @@ import { TagIcon,ArrowRight,Trash2 } from "lucide-react"
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "@/Store";
 import { decreaseQantity, deleteitem, increaseQuantity } from "@/Slices/CartSlice";
+import { toast } from "sonner";
 
 const Cart = () => {
   
@@ -91,15 +92,18 @@ const Cart = () => {
     <div className="flex flex-col justify-between items-end h-24">
       
       {/* Delete Icon */}
-      <button onClick={()=>dispatch(deleteitem(item))}>
-        <Trash2 className="w-5 h-5 text-red-500" />
+      <button onClick={()=>{
+      dispatch(deleteitem(item))
+         toast.success("Product is removed from cart ");
+      }}>
+        <Trash2 className="w-5 h-5 text-red-500 cursor-pointer"  />
       </button>
 
       {/* Quantity Control */}
       <div className="flex items-center gap-4 bg-gray-300 rounded-full px-4 py-1">
-        <button className="text-lg" onClick={()=>dispatch(decreaseQantity(item))}>−</button>
+        <button className="text-lg cursor-pointer" onClick={()=>dispatch(decreaseQantity(item))}>−</button>
         <span>{item.qantity}</span>
-        <button className="text-lg " onClick={()=>dispatch(increaseQuantity(item))}>+</button>
+        <button className="text-lg cursor-pointer " onClick={()=>dispatch(increaseQuantity(item))}>+</button>
       </div>
 
     </div>
@@ -157,7 +161,7 @@ const Cart = () => {
     className="w-full pl-12 pr-4 py-1 bg-[#F0F0F0] rounded-full focus:outline-none font-cormorant-infant"
   />
 </div>
-  <span ><Button className="px-8  md:px-16 py-4 rounded-full font-cormorant-infant uppercase text-sm hover:bg-gray-800 transition-colors">Apply</Button></span>   
+  <span ><Button className="px-8  md:px-16 py-4 rounded-full font-cormorant-infant uppercase text-sm hover:bg-gray-800 transition-colors" onClick={()=>{ toast.success("Promo code Applied Sucessfully") }}>Apply</Button></span>   
             </div>
           <button className="w-full mt-5 bg-black text-white py-3 rounded-full font-cormorant flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors">
            

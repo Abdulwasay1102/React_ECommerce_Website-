@@ -201,12 +201,12 @@ const Home = () => {
     </Carousel>
      </div>
       {/* ********* IMAGE CAROUSEL END HERE **************** */}
-
+{/* bg-[#E4D7C7]   this look perfect  bg-[#e1d3c1] */}
       {/* ********* Big perfume image start here **************** */}
       
-   <div className="perfumeimg mt-10 relative bg-[#E4D7C7] h-55 sm:h-[400px] md:h-auto overflow-hidden  ">
+   <div className="perfumeimg mt-10 relative h-55  bg-[#e1d3c1] sm:h-[400px] md:h-auto overflow-hidden  ">
         <AspectRatio ratio={1512 / 638}>
-       <img className="w-full h-full  md:object-cover object-cover sm:object-cover md:block relative top-8 "
+       <img className="w-full h-full  md:object-bottom object-cover sm:object-cover md:block relative top-5"
        style={{
             // This fades the left and top edges so the "box" disappears
             maskImage: 'linear-gradient(to left, black 70%, transparent 100%), linear-gradient(to top, black 80%, transparent 100%)',
@@ -227,7 +227,7 @@ const Home = () => {
     feel The luxury with our perfume collection
   </p>
   </div>
-<div className=" relative lg:top-20 top-20 sm:top-40 md:top-10 md:block">
+<div className=" relative lg:top-20 top-19 sm:top-40 md:top-10 md:block">
   <Button className="font-cormorant rounded-3xl py-2 px-6 md:px-8 text-[gold]
                      mt-6  lg:bottom-20 md:relative md:bottom-10 md:ml-14 lg:ml-28">
     Shop Now
@@ -248,13 +248,13 @@ const Home = () => {
 <div>
    <div className="imgcarousel flex justify-center items-center ">
      
-      <Carousel className="w-full  lg:max-w-350 px-4 overflow-visible">
-      <CarouselContent className="pl-1 md:pl-0 lg:pl-10">
+      <Carousel className="w-full  lg:max-w-350 px-4 overflow-visible ">
+      <CarouselContent className="pl-1 md:pl-0 lg:pl-10 ">
         {images.map((product)=>(
           <CarouselItem key={product.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6 ">
             <div className="p-1 group relative z-10">
               <Link to={`product/${product.id}`}>
-              <Card className="gap-10 overflow-hidden transition-all duration-500
+              <Card className="gap-10 overflow-hidden transition-all duration-500 rounded-4xl
                      hover:-translate-y-2 hover:shadow-xl  ">
                 <CardContent className="p-0 ">
                    <AspectRatio ratio={1/1.5}>
@@ -391,7 +391,7 @@ const Home = () => {
           <CarouselItem key={product.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6 ">
             <div className="p-1 group">
               <Link to={`product/${product.id}`}>
-              <Card className="gap-10 overflow-hidden transition-all duration-500
+              <Card className="gap-10 overflow-hidden transition-all duration-500 rounded-4xl
                      hover:-translate-y-2 hover:shadow-xl  ">
                 <CardContent className="p-0 ">
                    <AspectRatio ratio={1/1.5}>

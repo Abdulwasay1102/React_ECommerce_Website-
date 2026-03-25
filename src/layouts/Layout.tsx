@@ -8,6 +8,7 @@ import FeedbackForm from "@/pages/Feedback"
 import Home from "@/pages/Home"
 import { ProductDetail } from "@/pages/ProductDetail"
 import { createBrowserRouter,  RouterProvider,Outlet } from "react-router-dom"
+import { Toaster } from "@/Components/ui/sonner"
 
 
 const Rootlayout = ()=>{
@@ -17,6 +18,7 @@ const Rootlayout = ()=>{
   <Navbar />
   <Outlet />
   <Footer />
+  <Toaster position="top-center" closeButton />
 </div>
  )
 
@@ -38,6 +40,7 @@ const Layout = () => {
              {
              path:"product/:id",
              element: <ProductDetail />
+              
              },
              {
               path:"category",
