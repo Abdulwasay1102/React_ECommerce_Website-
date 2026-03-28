@@ -1,10 +1,10 @@
 import { FaCheck } from "react-icons/fa";
 import { useState } from "react";
  import visa from "@/assets/images/Visa_form.png"
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import type { RootState } from "@/Store";
 import {TagIcon} from "lucide-react"
-import { Link } from "lucide-react";
+
 
 const PaymentPage = () => {
      const [name, setName] = useState("");
