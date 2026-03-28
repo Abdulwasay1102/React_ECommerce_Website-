@@ -9,6 +9,8 @@ import Home from "@/pages/Home"
 import { ProductDetail } from "@/pages/ProductDetail"
 import { createBrowserRouter,  RouterProvider,Outlet } from "react-router-dom"
 import { Toaster } from "@/Components/ui/sonner"
+import PaymentPage from "@/pages/PaymentPage"
+import OrderComplete from "@/pages/Ordercomplete"
 
 
 const Rootlayout = ()=>{
@@ -62,8 +64,15 @@ const Layout = () => {
              {
               path:"feedback",
               element:<FeedbackForm/>
+             },
+             {
+              path:"paymentpage",
+              element:<PaymentPage/>
+             },
+             {
+              path:"ordercomplete",
+              element:<OrderComplete/>
              }
-             
              
             ]
         }

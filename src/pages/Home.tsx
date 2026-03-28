@@ -169,7 +169,7 @@ const Home = () => {
      
       <Carousel className="w-full  lg:max-w-350 px-4 overflow-visible">
       <CarouselContent className="pl-1 md:pl-0 lg:pl-10">
-        {images.map((product)=>(
+        {images.slice(0,8).map((product)=>(
           <CarouselItem key={product.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6 ">
             <div className="p-1 group relative z-10">
               <Link to={`/product/${product.id}`} className="block" >
@@ -250,7 +250,7 @@ const Home = () => {
      
       <Carousel className="w-full  lg:max-w-350 px-4 overflow-visible ">
       <CarouselContent className="pl-1 md:pl-0 lg:pl-10 ">
-        {images.map((product)=>(
+        {images.slice(10,16).map((product)=>(
           <CarouselItem key={product.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6 ">
             <div className="p-1 group relative z-10">
               <Link to={`product/${product.id}`}>
@@ -387,7 +387,7 @@ const Home = () => {
      
       <Carousel className="w-full  lg:max-w-350 px-4 overflow-visible">
       <CarouselContent className="pl-1 md:pl-0 lg:pl-10">
-        {images.map((product)=>(
+        {images.slice(19,28).map((product)=>(
           <CarouselItem key={product.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6 ">
             <div className="p-1 group">
               <Link to={`product/${product.id}`}>

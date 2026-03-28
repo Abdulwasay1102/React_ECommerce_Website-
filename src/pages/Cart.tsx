@@ -163,11 +163,11 @@ const Cart = () => {
 </div>
   <span ><Button className="px-8  md:px-16 py-4 rounded-full font-cormorant-infant uppercase text-sm hover:bg-gray-800 transition-colors" onClick={()=>{ toast.success("Promo code Applied Sucessfully") }}>Apply</Button></span>   
             </div>
-          <button className="w-full mt-5 bg-black text-white py-3 rounded-full font-cormorant flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors">
+          <Link to={"/paymentpage"} className="w-full mt-5 bg-black text-white py-3 rounded-full font-cormorant flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors">
            
     Go to Checkout
      <ArrowRight/>
-  </button>
+  </Link>
 
         </div>
 
