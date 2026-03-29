@@ -3,6 +3,47 @@ import Mencolth from "@/assets/images/Mencloth.jpg"
 import frok from "@/assets/images/frok.jpg"
 import gift from "@/assets/images/gifts.jpg"
 import perfume1 from "@/assets/images/perfume1.jpg"
+import dress1 from "@/assets/images/yellowdress.jpg"
+import browndress from "@/assets/images/browndress.jpg"
+import whiteshirt from "@/assets/images/whiteshirt.jpg"
+import blueshirt from "@/assets/images/blueshirt.png"
+import makeupkit from "@/assets/images/makeupkit.webp"
+import makeupkit2 from "@/assets/images/makeupkit2.webp"
+import perfume3 from "@/assets/images/Perfume3.jpg"
+import perfume4 from "@/assets/images/Perfume.4.jpg"
+import perfume5 from "@/assets/images/Perfume5.jpg"
+import perfume6 from "@/assets/images/perfume6.jpg"
+import perfume7 from "@/assets/images/Perfume7.jpg"
+import shoes from "@/assets/images/shoes.jpg"
+import greydress from "@/assets/images/greydress.jpg"
+import purpledress from "@/assets/images/purpledress.png"
+import blackdress from "@/assets/images/blackdress.png"
+import bluedress from "@/assets/images/bluedress.png"
+import plainwhiteshirt from "@/assets/images/planwhitechirt.png"
+import redshirt from "@/assets/images/redshirt.png"
+import purpleshirt from "@/assets/images/purpleshirt.png"
+import jeanshirt from "@/assets/images/jeanshirt.jpg"
+import flowerdress from "@/assets/images/flowerdress.jpg"
+import stripdress from "@/assets/images/stripdress.jpg"
+import printedshirt from "@/assets/images/printedshirt.jpg"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const images =[
   {
@@ -34,7 +75,7 @@ export const images =[
     price: 109.95,
     description: "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     category: "men's clothing",
-    img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
+    img: dress1,
     rating: { rate: 3.9, count: 120 }
   },
   {
@@ -43,7 +84,7 @@ export const images =[
     price: 22.3,
     description: "Slim-fitting style, contrast raglan long sleeve...",
     category: "men's clothing",
-    img: "https://images.unsplash.com/photo-1539533018447-63fcce2678e3",
+    img: browndress,
     rating: { rate: 4.1, count: 259 }
   },
   {
@@ -52,7 +93,7 @@ export const images =[
     price: 55.99,
     description: "great outerwear jackets for Spring/Autumn/Winter...",
     category: "men's clothing",
-    img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
+    img: whiteshirt,
     rating: { rate: 4.7, count: 500 }
   },
   {
@@ -61,7 +102,7 @@ export const images =[
     price: 15.99,
     description: "The color could be slightly different...",
     category: "men's clothing",
-    img: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png",
+    img: blueshirt,
     rating: { rate: 2.1, count: 430 }
   },
   {
@@ -70,7 +111,7 @@ export const images =[
     price: 695,
     description: "From our Legends Collection...",
     category: "jewelery",
-    img: "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/1.webp",
+    img: makeupkit,
     rating: { rate: 4.6, count: 400 }
   },
   {
@@ -79,7 +120,7 @@ export const images =[
     price: 168,
     description: "Satisfaction Guaranteed...",
     category: "jewelery",
-    img: "https://cdn.dummyjson.com/product-images/beauty/powder-canister/1.webp",
+    img: makeupkit2,
     rating: { rate: 3.9, count: 70 }
   },
   {
@@ -97,7 +138,7 @@ export const images =[
     price: 10.99,
     description: "Rose Gold Plated Double Flared Tunnel Plug Earrings...",
     category: "jewelery",
-    img: "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd",
+    img: perfume3,
     rating: { rate: 1.9, count: 100 }
   },
   {
@@ -105,7 +146,7 @@ export const images =[
      "des": "Rose Luxury Perfume",
     "price": 89.99,
     "category": "perfume",
-    "img": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad",
+    "img": perfume4,
     "rating": { "rate": 4.7, "count": 180 }
   },
   {
@@ -113,7 +154,7 @@ export const images =[
      "des": "Vanilla Sweet Perfume",
     "price": 75.00,
     "category": "perfume",
-    "img": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be",
+    "img": perfume5,
     "rating": { "rate": 4.4, "count": 130 }
   },
   {
@@ -121,7 +162,7 @@ export const images =[
    "des": "Golden Sandal Perfume",
     "price": 98.00,
     "category": "perfume",
-    "img": "https://images.unsplash.com/photo-1601049676869-702ea24cfd58",
+    "img": perfume6,
     "rating": { "rate": 4.7, "count": 190 }
   },
   {
@@ -129,7 +170,7 @@ export const images =[
    "des": "Black Orchid Perfume",
     "price": 110.00,
     "category": "perfume",
-    "img": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539",
+    "img": perfume7,
     "rating": { "rate": 4.8, "count": 210 }
   },  
   
@@ -138,7 +179,7 @@ export const images =[
    "des": "Citrus Fresh Color Shoes",
     "price": 68.99,
     "category": "perfume",
-    "img": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519",
+    "img": shoes,
     "rating": { "rate": 4.2, "count": 120 }
   },
   {
@@ -146,7 +187,7 @@ export const images =[
  "des": "Jasmine Bloom Dress",
     "price": 82.99,
     "category": "perfume",
-    "img": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956",
+    "img": greydress,
     "rating": { "rate": 4.6, "count": 175 }
   },
   {
@@ -155,7 +196,7 @@ export const images =[
     price: 56.99,
     description: "Note:The Jackets is US standard size...",
     category: "women's clothing",
-    img: "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png",
+    img: purpledress,
     rating: { rate: 2.6, count: 235 }
   },
   {
@@ -164,7 +205,7 @@ export const images =[
     price: 29.95,
     description: "100% POLYURETHANE(shell)...",
     category: "women's clothing",
-    img: "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png",
+    img: blackdress,
     rating: { rate: 2.9, count: 340 }
   },
   {
@@ -173,7 +214,7 @@ export const images =[
     price: 39.99,
     description: "Lightweight perfect for trip or casual wear...",
     category: "women's clothing",
-    img: "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2t.png",
+    img: bluedress,
     rating: { rate: 3.8, count: 679 }
   },
   {
@@ -182,7 +223,7 @@ export const images =[
     price: 9.85,
     description: "95% RAYON 5% SPANDEX...",
     category: "women's clothing",
-    img: "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png",
+    img: plainwhiteshirt,
     rating: { rate: 4.7, count: 130 }
   },
   {
@@ -191,7 +232,7 @@ export const images =[
     price: 7.95,
     description: "100% Polyester, Machine wash...",
     category: "women's clothing",
-    img: "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png",
+    img: redshirt,
     rating: { rate: 4.5, count: 146 }
   },
   {
@@ -200,7 +241,7 @@ export const images =[
     price: 12.99,
     description: "95%Cotton,5%Spandex...",
     category: "women's clothing",
-    img: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png",
+    img: printedshirt,
     rating: { rate: 3.6, count: 145 }
   },
     {
@@ -208,7 +249,7 @@ export const images =[
     "des": "Floral Summer Dress",
     "price": 49.99,
     "category": "women",
-    "img": "https://images.unsplash.com/photo-1589310243389-96a5483213a8",
+    "img": purpleshirt,
     "rating": { "rate": 4.6, "count": 210 }
   },
   {
@@ -216,7 +257,7 @@ export const images =[
     "des": "Women Casual Jacket",
     "price": 59.99,
     "category": "women",
-    "img": "https://images.unsplash.com/photo-1543076447-215ad9ba6923",
+    "img": jeanshirt,
     "rating": { "rate": 4.4, "count": 150 }
   },
   {
@@ -224,7 +265,7 @@ export const images =[
     "des": "Elegant Red Dress",
     "price": 79.99,
     "category": "women",
-    "img": "https://images.unsplash.com/photo-1496747611176-843222e1e57c",
+    "img": flowerdress,
     "rating": { "rate": 4.8, "count": 300 }
   },
   {
@@ -232,7 +273,7 @@ export const images =[
     "des": "Women White Top",
     "price": 25.99,
     "category": "women",
-    "img": "https://images.unsplash.com/photo-1485968579580-b6d095142e6e",
+    "img": stripdress,
     "rating": { "rate": 4.1, "count": 95 }
   }
 
