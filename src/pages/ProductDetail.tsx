@@ -253,7 +253,7 @@ const [quantity] = useState(1);
    </div>
    </div>
  <div >
-      <h1 className="font-cormorant text-5xl text-center text-black mb-5 mt-20">You might also like</h1>
+      <h1 className="font-cormorant text-4xl text-center text-black mb-5 mt-20">You might also like</h1>
      </div>
      <div className="imgcarousel flex justify-center items-center">
      
