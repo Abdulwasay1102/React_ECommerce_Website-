@@ -204,16 +204,23 @@ const Home = () => {
 {/* bg-[#E4D7C7]   this look perfect  bg-[#e1d3c1] */}
       {/* ********* Big perfume image start here **************** */}
       
-   <div className="perfumeimg mt-10 relative h-55  bg-[#e1d3c1] sm:h-[400px] md:h-auto overflow-hidden  ">
+   <div className="perfumeimg mt-10 relative h-55  bg-[#e0d1bd] sm:h-[400px] md:h-auto overflow-hidden  ">
         <AspectRatio ratio={1512 / 638}>
        <img className="w-full h-full  md:object-bottom object-cover sm:object-cover md:block relative top-5"
-       style={{
-            // This fades the left and top edges so the "box" disappears
-            maskImage: 'linear-gradient(to left, black 70%, transparent 100%), linear-gradient(to top, black 80%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to left, black 70%, transparent 100%), linear-gradient(to top, black 80%, transparent 100%)',
-            maskComposite: 'intersect',
-            WebkitMaskComposite: 'source-in'
-          }}
+     style={{
+  maskImage: `
+    linear-gradient(to left, black 70%, transparent 100%),
+    linear-gradient(to top, black 80%, transparent 100%),
+    linear-gradient(to bottom, black 80%, transparent 100%)
+  `,
+  WebkitMaskImage: `
+    linear-gradient(to left, black 70%, transparent 100%),
+    linear-gradient(to top, black 80%, transparent 100%),
+    linear-gradient(to bottom, black 94%, transparent 100%)
+  `,
+  maskComposite: 'intersect',
+  WebkitMaskComposite: 'source-in'
+}}
        src={perfume} alt="" /> 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4
                 md:flex md:flex-col md:justify-center md:items-start
@@ -228,10 +235,12 @@ const Home = () => {
   </p>
   </div>
 <div className=" relative lg:top-20 top-19 sm:top-40 md:top-10 md:block">
+    <Link to={`/product/15`} className="block" >
   <Button className="font-cormorant rounded-3xl py-2 px-6 md:px-8 text-[gold]
                      mt-6  lg:bottom-20 md:relative md:bottom-10 md:ml-14 lg:ml-28">
     Shop Now
   </Button>
+  </Link>
 </div>
 </div>
 

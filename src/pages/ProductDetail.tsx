@@ -7,6 +7,14 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/Components/ui/breadcrumb"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+   
+} from "@/Components/ui/carousel"
 import { Link, useParams } from 'react-router-dom'
 import { Card,CardContent } from "@/Components/ui/card";
 import { images } from "@/Data/products";
@@ -17,6 +25,7 @@ import { useEffect } from "react";
 import { useDispatch} from "react-redux";
 import { addtocart } from "@/Slices/CartSlice";
 import { toast } from "sonner";
+import Newsattler from "@/Components/Newsattler";
 
 
 
@@ -243,6 +252,49 @@ const [quantity] = useState(1);
         
    </div>
    </div>
+ <div >
+      <h1 className="font-cormorant text-5xl text-center text-black mb-5 mt-20">You might also like</h1>
+     </div>
+     <div className="imgcarousel flex justify-center items-center">
+     
+      <Carousel className="w-full  lg:max-w-350 px-4 overflow-visible">
+      <CarouselContent className="pl-1 md:pl-0 lg:pl-10">
+        {images.slice(4,15).map((product)=>(
+          <CarouselItem key={product.id} className=" md:basis-1/3 basis-1/2 pl-1 lg:basis-1/6 ">
+            <div className="p-1 group relative z-10">
+              <Link to={`/product/${product.id}`} className="block" >
+              <Card className="gap-10 overflow-hidden rounded-3xl  transition-all duration-500
+             hover:-translate-y-2 hover:shadow-2xl cursor-pointer ">
+                <CardContent className="p-0   ">
+                   <AspectRatio ratio={1/1}>
+                   <img className="w-full h-full rounded-2xl object-cover transition-transform duration-600
+                   group-hover:scale-120 " src={product.img} alt="" />
+                    <div className="absolute bottom-0 w-full
+                              text-white text-center py-2
+                        bg-gradient-to-t from-black/70 to-transparent
+                        opacity-0 group-hover:opacity-100
+                        transition duration-500">
+
+                        {product.des}
+
+                          </div>
+                   </AspectRatio>
+                </CardContent>
+              </Card>
+              </Link>
+            </div> 
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+   <CarouselPrevious className="left-2 md:left-4 top-1/2 -translate-y-1/2 absolute" />
+        <CarouselNext className="right-2 md:right-4 top-1/2 -translate-y-1/2 absolute" />
+    </Carousel>
+     </div>
+
+     <div className="mt-20">
+      <Newsattler/>
+     </div>
+
 
     </>
   )

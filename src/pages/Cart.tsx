@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "@/Store";
 import { decreaseQantity, deleteitem, increaseQuantity } from "@/Slices/CartSlice";
 import { toast } from "sonner";
+import Newsattler from "@/Components/Newsattler";
 
 const Cart = () => {
   
@@ -177,6 +178,10 @@ const Cart = () => {
 
 
 
+</div>
+
+<div className="mt-20">
+  <Newsattler/>
 </div>
 
    </>

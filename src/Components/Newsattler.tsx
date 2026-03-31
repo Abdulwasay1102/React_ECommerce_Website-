@@ -1,4 +1,5 @@
 import { Button } from "./ui/button"
+import { toast } from "sonner";
 const Newsattler = () => {
   return (
     <>
@@ -18,7 +19,9 @@ const Newsattler = () => {
             placeholder="ENTER YOUR EMAIL ADDRESS"
             className="w-full px-4 py-3 border text-white border-gray-300 placeholder:tracking-tighter placeholder:md:tracking-normal rounded-full bg-transparent focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-center placeholder:text-gray-500"
           />
-          <Button className="bg-[#FFC633] text-black w-full rounded-full font-cormorant text-lg uppercase hover:bg-yellow-500 transition py-6">
+          <Button className="bg-[#FFC633] text-black w-full rounded-full font-cormorant text-lg uppercase hover:bg-yellow-500 transition py-6" onClick={()=>{
+             toast.success("Thank you for Subscribing");
+          }}>
             SUBSCRIBE TO NEWSLETTER
           </Button>
         </div>

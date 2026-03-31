@@ -11,6 +11,7 @@ import { Link } from "react-router-dom"
 import { Card,CardContent } from "@/Components/ui/card"
 import { AspectRatio } from "@/Components/ui/aspect-ratio"
 import { images } from "@/Data/products"
+import Newsattler from "@/Components/Newsattler"
 
 
 
@@ -78,6 +79,10 @@ const Category = () => {
 </div>
 </div>
    
+
+   <div className="mt-32">
+    <Newsattler/>
+   </div>
    
    </>
   )
