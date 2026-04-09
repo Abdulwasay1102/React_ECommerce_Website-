@@ -52,7 +52,7 @@ const dispatch = useDispatch()
 
 const handleAddToCart = () => {
   if (!product) return;
-   
+   window.scrollTo({ top: 0, behavior: "smooth" })
   dispatch(addtocart({
     ...product,
     size: selectedSize,

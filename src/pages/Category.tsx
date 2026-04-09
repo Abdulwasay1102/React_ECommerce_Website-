@@ -12,15 +12,35 @@ import { Card,CardContent } from "@/Components/ui/card"
 import { AspectRatio } from "@/Components/ui/aspect-ratio"
 import { images } from "@/Data/products"
 import Newsattler from "@/Components/Newsattler"
-
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/Components/ui/pagination"
+import { useState } from "react"
 
 
 
 const Category = () => {
-  useEffect(()=>{
-    window.scrollTo(0,0)
-  },[])
 
+const [currentPage, setCurrentPage] = useState(1)
+
+const itemsPerPage = 12
+
+const totalPages = Math.ceil(images.length / itemsPerPage)
+
+// slice data for current page
+const startIndex = (currentPage - 1) * itemsPerPage
+const currentItems = images.slice(startIndex, startIndex + itemsPerPage)
+
+
+
+  useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" })
+}, [currentPage])
  
   return (
    <>
@@ -48,7 +68,7 @@ const Category = () => {
     <div className="mian mt-3 p-2 gap-3 grid grid-cols-1  md:grid-cols-[260px_1fr] ">
       <div className="filter  "></div>
      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
-  {images.map((item, index) => (
+  {currentItems.map((item, index) => (
     <Link to={`/product/${item.id}`} className="block" >
     
     <Card
@@ -78,7 +98,51 @@ const Category = () => {
   ))}
 </div>
 </div>
-   
+  <div className="pagination mt-10 flex justify-center items-center">
+  <Pagination>
+    <PaginationContent>
+
+      {/* Previous */}
+      <PaginationItem>
+        <PaginationPrevious
+          href="#"
+          onClick={(e) => {
+            e.preventDefault()
+            if (currentPage > 1) setCurrentPage(currentPage - 1)
+          }}
+        />
+      </PaginationItem>
+
+      {/* Page Numbers */}
+      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+        <PaginationItem key={page}>
+          <PaginationLink
+            href=""
+            isActive={currentPage === page}
+            onClick={(e) => {
+              e.preventDefault()
+              setCurrentPage(page)
+            }}
+          >
+            {page}
+          </PaginationLink>
+        </PaginationItem>
+      ))}
+
+      {/* Next */}
+      <PaginationItem>
+        <PaginationNext
+          href="#"
+          onClick={(e) => {
+            e.preventDefault()
+            if (currentPage < totalPages) setCurrentPage(currentPage + 1)
+          }}
+        />
+      </PaginationItem>
+
+    </PaginationContent>
+  </Pagination>
+</div>
 
    <div className="mt-32">
     <Newsattler/>
