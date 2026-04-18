@@ -64,10 +64,10 @@ const currentItems = images.slice(startIndex, startIndex + itemsPerPage)
         </Breadcrumb>
       </div>
     {/* ********* Breadcrumb links End Here**************** */}
-    
-    <div className="mian mt-3 p-2 gap-3 grid grid-cols-1  md:grid-cols-[260px_1fr] ">
-      <div className="filter  "></div>
-     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
+    {/* md:grid-cols-[260px_1fr] */}
+    <div className="mian mt-3 p-2 gap-3 grid grid-cols-1   ">
+      {/* <div className="filter  "></div> */}
+     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6 p-5">
   {currentItems.map((item, index) => (
     <Link to={`/product/${item.id}`} className="block" >
     

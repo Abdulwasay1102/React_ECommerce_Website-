@@ -89,6 +89,7 @@ const Home = () => {
             src={Womenimg} 
             alt="Elegant Fashion" 
             className="h-full w-full object-cover object-top scale-x-[-1]" 
+            loading="eager"
           />
         </AspectRatio>
       </div>
